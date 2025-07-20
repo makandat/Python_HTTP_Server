@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width,initial-scale=1" />
+ <title>XCopy</title>
+ <!-- BootstrapのCSS読み込み -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+ <!-- ヘッダー -->
+ <header class="container">
+  <h1 class="text-center p-5 border border-primary rounded bg-light">XCopy</h1>
+  <p class="text-center"><a href="/">HOME</a></p>
+ </header>
+
+ <!-- 本文 -->
+ <article class="container">
+  <section class="row mt-4">
+   <form method="POST">
+    <div class="mb-2 mt-4">
+     <label class="form-control-label">コピー元フォルダ
+      <input type="text" name="srcfolder" class="form-control" size="100" value="{{srcfolder}}" />
+     </label>
+    </div>
+    <div class="mb-2 mt-4">
+     <label class="form-control-label">コピー先フォルダ
+      <input type="text" name="destfolder" class="form-control" size="100" value="{{destfolder}}" />
+     </label>
+    </div>
+    <div class="mb-2 mt-4">
+     <label class="form-check-label">
+      <input type="checkbox" name="sync" class="form-check-input" value="sync" /> 同期 (コピー元にないファイルを削除)
+     </label>
+    </div>
+    <div class="mt-5 mb-4">
+     <button class="btn btn-primary">コピー実行</button>
+    </div>
+    <p class="text-info mt-2">{{message}}</p>
+   <form>
+   <ul class="mt-4">{{result}}</ul>
+  </section>
+ </article>
+ 
+ <!-- フッター -->
+ <footer class="container">
+  <p class="text-center mt-4"><a href="#top">TOP</a></p>
+  <p>&nbsp;</p>
+ </footer>
+ <!-- BootstrapのJS読み込み -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

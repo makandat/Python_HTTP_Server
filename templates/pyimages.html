@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width,initial-scale=1" />
+ <title>AWS S3 用画像リスト HTML 作成</title>
+ <!-- BootstrapのCSS読み込み -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+ <style>
+  pre {
+    padding:4px;
+    border:solid thin silver;
+  }
+ </style>
+</head>
+
+<body>
+ <!-- ヘッダー -->
+ <header class="container">
+  <h1 class="text-center p-5 border border-warning bg-light rounded">AWS S3 用画像リスト HTML 作成</h1>
+  <p class="text-center"><a href="/">HOME</a></p>
+ </header>
+
+ <!-- 本文 -->
+ <article class="container">
+  <section class="row">
+   <form method="POST">
+    <div class="mb-2">
+     <label class="form-control-label">リモート (S3://makandat/Google AI Studio/******)
+      <input type="folder" class="form-control" name="remote_folder" size="80" value="$remote_folder" />
+     </label>
+    </div>
+    <div class="mb-2">
+     <label class="form-control-label">ローカルの場所
+      <input type="folder" class="form-control" name="local_folder" size="80" value="$local_folder" />
+     </label>
+    </div>
+    <div class="mb-2">
+     <label class="form-control-label">タイトル
+      <input type="text" class="form-control" name="title" size="50" value="$title" />
+     </label>
+    </div>
+    <div class="mb-2">
+     <label class="form-control-label">保存先のファイル名 (フルパス 空欄の場合はファイル保存しない)
+      <input type="text" class="form-control" name="savepath" size="100" value="$savepath" />
+     </label>
+    </div>
+    <div class="mt-5 mb-2">
+      <button class="btn btn-primary">HTML を作成する</button>
+    </div>
+    <p class="mt-5 text-info">$message</p>
+    <div class="mt-4"><pre>$result</pre></div>
+   </form>
+  </section>
+ </article>
+ 
+ <!-- フッター -->
+ <footer class="container">
+  <p class="text-center mt-5"><a href="#top">TOP</a></p>
+  <p>&nbsp;</p>
+ </footer>
+ <!-- BootstrapのJS読み込み -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
